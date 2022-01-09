@@ -9,7 +9,6 @@ public func configure(_ app: Application) throws {
     app.views.use(.leaf)
 
     
-
     // register routes
     try routes(app)
 }
