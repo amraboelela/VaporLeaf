@@ -12,14 +12,14 @@ struct IndexController: RouteCollection {
     
     func rootHandler(_ req: Request) -> EventLoopFuture<View> {
         let indexModel = IndexModel(
-            title: "Hi",
+            title: "Welcome",
             body: "Hello world!")
         return req.view.render("index", indexModel)
     }
     
     func indexHandler(_ req: Request) -> EventLoopFuture<View> {
         let indexModel = IndexModel(
-            title: "Home page",
+            title: "No Welcome",
             body: "This is the index page (under construction)")
         return req.view.render("index", indexModel)
     }

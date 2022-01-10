@@ -9,9 +9,14 @@
 
 <body>
     <h1>#(title)</h1>
-    #for(number in numbers):
-        <p>#(number)</p>
-    #endfor
+    #if(count(numbers) > 0):
+        There are #count(numbers) numbers<br>
+        #for(number in numbers):
+            <p>#(number)</p>
+        #endfor
+    #else:
+        There are no numbers yet :(
+    #endif
 </body>
 </html>
 

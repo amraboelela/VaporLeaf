@@ -3,10 +3,23 @@
 <head>
   <meta charset="utf-8">
 
-  <title>#(title)</title>
+  <title>
+      #if(title):
+          The title is #(title)
+      #else:
+          No title was provided.
+      #endif
+  </title>
 </head>
 
 <body>
+    <h1>
+        #if(title == "Welcome"):
+            This is a friendly web page.
+        #else:
+            No strangers allowed!
+        #endif
+    </h1>
   <h1>#(body)</h1>
 </body>
 </html>
