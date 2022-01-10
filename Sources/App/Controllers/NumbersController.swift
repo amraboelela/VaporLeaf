@@ -9,7 +9,7 @@ struct NumbersController: RouteCollection {
     }
     
     func numbersHandler(_ req: Request) -> EventLoopFuture<View> {
-        let numbersModel = NumbersModel(title: "Hello!", numbers: [42, 9001])
+        let numbersModel = NumbersModel(title: "Hello!", numbers: [42, 13, 33, 9001])
         return req.view.render("numbers", numbersModel)
     }
 }
