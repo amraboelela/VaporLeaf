@@ -6,8 +6,15 @@ if [ ! -z "$VAPOR_PS" ]; then
     kill $VAPOR_PS
 fi
 
+git_head=$(git rev-parse HEAD)
+read built_git_head < built_git_head.txt
+if [ $git_head != "$built_git_head" ] || [ ! -f "${WEBSERVER_PATH}/Package.resolved" ]; then
+    echo Need to rebuild
+    ${WEBSERVER_PATH}/build
+fi
+
 swift run Run serve --hostname 0.0.0.0 --port 8080 > ${WEBSERVER_PATH}/log.txt 2>&1 &
 
 disown
 sleep 2
-cat ${TWISTER_WEBSERVER_PATH}/log.txt
+cat ${WEBSERVER_PATH}/log.txt

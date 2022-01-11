@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git_head=$(git rev-parse HEAD)
+swift build -Xswiftc -DDEBUG -Xswiftc -DTwisterWebserver_dev 2<&1 | tee || exit
+echo $git_head > built_git_head.txt
