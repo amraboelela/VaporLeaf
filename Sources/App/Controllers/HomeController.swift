@@ -12,6 +12,6 @@ struct HomeController: RouteCollection {
             title: "Home page",
             header: "This is my own page.",
             message: "This is my page (under construction)")
-        return req.view.render("home", homeModel)
+        return req.view.render("site/home", homeModel)
     }
 }
