@@ -72,4 +72,4 @@ fastlane/test_output
 TestDB
 
 log.txt
-
+built_git_head.txt
