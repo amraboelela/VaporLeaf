@@ -1,7 +1,13 @@
 
 WEBSERVER_PATH=$(dirname $0)
 
-#swift run Run serve --hostname 0.0.0.0 --port 8080 &
+VAPOR_PS=$(ps aux | grep "port 8080" | awk '{print $2}')
+if [ ! -z "$VAPOR_PS" ]; then
+    kill $VAPOR_PS
+fi
 
 swift run Run serve --hostname 0.0.0.0 --port 8080 > ${WEBSERVER_PATH}/log.txt 2>&1 &
 
+disown
+sleep 2
+cat ${TWISTER_WEBSERVER_PATH}/log.txt
