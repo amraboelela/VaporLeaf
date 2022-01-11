@@ -70,3 +70,6 @@ fastlane/screenshots
 fastlane/test_output
 
 TestDB
+
+log.txt
+
